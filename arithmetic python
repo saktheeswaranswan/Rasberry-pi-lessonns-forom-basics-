@@ -1,0 +1,54 @@
+give examples of pyhon Arithmetic Calculation code add sub muliply divide mod and more
+ChatGPT
+Certainly! Here are some examples of Python code for arithmetic calculations:
+
+Addition:
+python
+Copy code
+a = 5
+b = 3
+result = a + b
+print("Addition result:", result)
+Subtraction:
+python
+Copy code
+a = 10
+b = 7
+result = a - b
+print("Subtraction result:", result)
+Multiplication:
+python
+Copy code
+a = 4
+b = 6
+result = a * b
+print("Multiplication result:", result)
+Division:
+python
+Copy code
+a = 15
+b = 2
+result = a / b
+print("Division result:", result)
+Modulus (remainder after division):
+python
+Copy code
+a = 20
+b = 7
+result = a % b
+print("Modulus result:", result)
+Exponentiation:
+python
+Copy code
+a = 2
+b = 5
+result = a ** b
+print("Exponentiation result:", result)
+Floor Division (integer division):
+python
+Copy code
+a = 17
+b = 4
+result = a // b
+print("Floor Division result:", result)
+These examples demonstrate basic arithmetic operations in Python. You can modify the values of 'a' and 'b' variables to perform calculations with different numbers.

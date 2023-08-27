@@ -1,30 +1,19 @@
-import RPi.GPIO as GPIO
 import time
-import random  # We'll use the random module to generate different delays
+import board
+import digitalio
+import random
 
-# Set up the GPIO mode
-GPIO.setmode(GPIO.BOARD)
+# Define the GPIO pin numbers for the LEDs
+led_pins = [board.GP0, board.GP1, board.GP2]
 
-# Define the GPIO pins for the LEDs
-led_pins = [11, 13, 15]  # You can adjust these pin numbers according to your wiring
+# Create DigitalInOut objects for each LED
+leds = [digitalio.DigitalInOut(pin) for pin in led_pins]
+for led in leds:
+    led.direction = digitalio.Direction.OUTPUT
 
-# Set up the GPIO pins as outputs
-for pin in led_pins:
-    GPIO.setup(pin, GPIO.OUT)
-
-# Function to blink an LED with a random delay
-def blink_led(pin):
-    GPIO.output(pin, GPIO.HIGH)
-    delay = random.uniform(0.2, 1.0)  # Generate a random delay between 0.2 and 1.0 seconds
-    time.sleep(delay)
-    GPIO.output(pin, GPIO.LOW)
-
-try:
-    while True:
-        for pin in led_pins:
-            blink_led(pin)
-except KeyboardInterrupt:
-    pass  # Exit the loop if Ctrl+C is pressed
-
-# Clean up the GPIO configuration
-GPIO.cleanup()
+while True:
+    for led in leds:
+        led.value = not led.value
+        delay_time = random.uniform(0.1, 1.0)  # Generate a random delay between 0.1 and 1.0 seconds
+        scaled_delay = delay_time * 2  # Scale the delay time by a factor (e.g., 2)
+        time.sleep(scaled_delay)

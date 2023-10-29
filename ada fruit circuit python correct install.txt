@@ -1,0 +1,22 @@
+sudo apt-get update
+sudo apt-get full-upgrade
+sudo reboot
+sudo apt-get install python3-pip
+sudo pip3 install --upgrade setuptools
+cd ~
+sudo pip3 install --upgrade adafruit-python-shell
+wget https://github.com/adafruit/Raspberry-Pi-Installer-Scripts/blob/main/raspi-blinka.py
+sudo python3 raspi blinka.py
+
+sudo i2cdetect -y 1 
+
+pip3 install adafruit-circuitpython-ssd1306
+
+sudo apt-get install python3-pil
+
+git clone https://github.com/mklements/OLED_Stats.git
+
+cd OLED_Stats
+
+
+python3 stats.py

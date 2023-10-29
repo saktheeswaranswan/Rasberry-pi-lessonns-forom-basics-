@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "/home/jiviteshdg/.local/lib/python3.9/site-packages/luma/core/interface/serial.py", line 64, in __init__
+    self._bus = smbus2.SMBus(port)
+  File "/home/jiviteshdg/.local/lib/python3.9/site-packages/smbus2/smbus2.py", line 280, in __init__
+    self.open(bus)
+  File "/home/jiviteshdg/.local/lib/python3.9/site-packages/smbus2/smbus2.py", line 310, in open
+    self.fd = os.open(filepath, os.O_RDWR)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/i2c-1'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/media/jiviteshdg/UEFI_NTFS/oled/oled.py", line 11, in <module>
+    serial = i2c(port=1, address=0x3C)
+  File "/home/jiviteshdg/.local/lib/python3.9/site-packages/luma/core/interface/serial.py", line 72, in __init__
+    raise luma.core.error.DeviceNotFoundError(
+luma.core.error.DeviceNotFoundError: I2C device not found: /dev/i2c-1
+
+

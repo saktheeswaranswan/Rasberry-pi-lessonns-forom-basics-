@@ -1,0 +1,14 @@
+The code you provided doesn't specify the pin connections on the Raspberry Pi directly. It uses the luma.oled library, which typically communicates with the OLED display over I2C (SCL and SDA pins) and doesn't require you to specify specific GPIO pins in the code. The I2C pins are standard and typically used for connecting I2C devices like OLED displays on the Raspberry Pi.
+
+However, it's essential to ensure that your Raspberry Pi is correctly connected to your OLED display using the I2C pins. The default I2C pins on a Raspberry Pi 3 or 4 are as follows:
+
+SDA (Serial Data): GPIO 2 (Pin 3)
+SCL (Serial Clock): GPIO 3 (Pin 5)
+If you are using a different Raspberry Pi model, these pins might vary, so please consult your specific Raspberry Pi model's GPIO pinout to confirm the I2C pins.
+
+Ensure that your OLED display is correctly wired to these I2C pins, and if necessary, configure the I2C address and other settings based on your OLED display's specifications.
+
+
+
+
+

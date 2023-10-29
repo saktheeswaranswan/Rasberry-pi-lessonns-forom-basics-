@@ -1,0 +1,22 @@
+The error message you provided indicates that the code is unable to find the I2C device at /dev/i2c-1. This typically means that either the I2C interface is not enabled on your Raspberry Pi or there is a hardware connection issue.
+
+Here are the steps to troubleshoot and resolve this issue:
+
+Enable I2C Interface: Make sure the I2C interface is enabled on your Raspberry Pi. You can enable it by using the raspi-config tool:
+
+arduino
+Copy code
+sudo raspi-config
+Go to "Interfacing Options" -> "I2C" and enable it. Reboot your Raspberry Pi after enabling the I2C interface.
+
+Check Hardware Connection: Ensure that your OLED display is correctly connected to the I2C pins (SDA and SCL). Double-check the wiring to make sure it's not loose or incorrectly connected.
+
+I2C Address: Confirm that the I2C address specified in your code (0x3C) matches the actual address of your OLED display. Some displays may use a different address. Check your display's documentation for the correct address.
+
+SMBus Package: Ensure that the smbus2 package is installed. You can install it with:
+
+Copy code
+pip install smbus2
+Reboot: After making any changes to the I2C interface or hardware connections, it's a good idea to reboot your Raspberry Pi to apply the changes.
+
+If you have followed these steps and are still encountering the error, please double-check your hardware connections, confirm the I2C address, and ensure that the OLED display is compatible with your Raspberry Pi model.
